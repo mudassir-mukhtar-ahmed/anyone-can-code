@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anyone Can Code — Workshop Outline for Board Review</title>
+<meta name="description" content="Proposed workshop outline: Anyone Can Code — From Idea to App with AI. Submitted for board review.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #FAFAF8;
+    --surface: #F1EFE9;
+    --ink: #17181A;
+    --ink-soft: #55585C;
+    --accent: #1F6F5C;
+    --accent-soft: #E6EEEC;
+    --rule: #E2E0D8;
+    --max: 760px;
+  }
+
+  *{ box-sizing: border-box; }
+
+  html{ -webkit-text-size-adjust: 100%; }
+
+  body{
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .mono{ font-family: 'IBM Plex Mono', ui-monospace, monospace; }
+
+  a{ color: var(--accent); }
+
+  .wrap{
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ---------- Header ---------- */
+
+  header{
+    padding: 72px 0 40px;
+    animation: rise .6s ease-out both;
+  }
+
+  @keyframes rise{
+    from{ opacity: 0; transform: translateY(8px); }
+    to{ opacity: 1; transform: translateY(0); }
+  }
+
+  .eyebrow{
+    font-size: 12px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+    margin: 0 0 20px;
+  }
+
+  h1.title{
+    font-size: clamp(2.1rem, 5vw, 3rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin: 0 0 6px;
+  }
+
+  .subtitle{
+    font-size: clamp(1.05rem, 2.4vw, 1.3rem);
+    font-weight: 500;
+    color: var(--ink-soft);
+    margin: 0 0 32px;
+  }
+
+  .rule{
+    height: 1px;
+    background: var(--rule);
+    border: 0;
+    margin: 0;
+  }
+
+  .accent-rule{
+    height: 3px;
+    width: 48px;
+    background: var(--accent);
+    border: 0;
+    margin: 0 0 28px;
+  }
+
+  .facts{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 32px;
+    margin-top: 32px;
+  }
+
+  .fact dt{
+    font-size: 11px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin: 0 0 4px;
+  }
+
+  .fact dd{
+    margin: 0;
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  /* ---------- Sections ---------- */
+
+  section{
+    padding: 44px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  section.overview{ padding-top: 4px; }
+
+  h2.section-title{
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin: 0 0 4px;
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+
+  .num{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--accent);
+  }
+
+  .kicker{
+    font-size: 12px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin: 0 0 10px;
+    font-weight: 600;
+  }
+
+  h2.big-title{
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    margin: 0 0 16px;
+  }
+
+  p{ margin: 0 0 14px; color: var(--ink); }
+  section p, section li{ color: #2A2C2E; }
+
+  ul.plain{
+    margin: 8px 0 14px;
+    padding-left: 20px;
+  }
+  ul.plain li{ margin-bottom: 6px; }
+
+  .purpose{
+    margin-top: 16px;
+    padding-left: 16px;
+    border-left: 2px solid var(--accent);
+  }
+
+  .purpose-label{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .purpose p{ margin: 0; font-size: 15px; color: var(--ink-soft); }
+
+  /* ---------- Principle block ---------- */
+
+  .principle{
+    text-align: center;
+    padding: 32px 0 8px;
+  }
+
+  .principle-line{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: clamp(1.05rem, 3vw, 1.5rem);
+    font-weight: 600;
+    margin: 0 0 14px;
+    letter-spacing: -0.01em;
+  }
+
+  .principle-line .ne{ color: var(--accent); padding: 0 6px; }
+
+  /* ---------- Outcomes ---------- */
+
+  .outcomes{
+    list-style: none;
+    margin: 8px 0 0;
+    padding: 0;
+    display: grid;
+    gap: 10px;
+  }
+
+  .outcomes li{
+    display: flex;
+    gap: 12px;
+    align-items: baseline;
+    font-size: 15px;
+  }
+
+  .outcomes li::before{
+    content: "—";
+    font-family: 'IBM Plex Mono', monospace;
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+
+  /* ---------- Table ---------- */
+
+  .table-scroll{
+    overflow-x: auto;
+    margin-top: 20px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  table{
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 480px;
+    font-size: 15px;
+  }
+
+  thead th{
+    text-align: left;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    font-weight: 600;
+    padding: 0 0 10px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  th.time-col, td.time-col{ text-align: right; }
+
+  tbody td{
+    padding: 12px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  tbody td.time-col{
+    font-family: 'IBM Plex Mono', monospace;
+    font-variant-numeric: tabular-nums;
+    color: var(--ink-soft);
+  }
+
+  tr.total td{
+    font-weight: 700;
+    border-bottom: none;
+    padding-top: 16px;
+  }
+
+  tr.total td.time-col{ color: var(--accent); }
+
+  /* ---------- Footer ---------- */
+
+  footer{
+    padding: 40px 0 80px;
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+
+  footer .mono{ color: var(--ink-soft); }
+
+  @media (max-width: 560px){
+    .facts{ grid-template-columns: 1fr; }
+    header{ padding-top: 48px; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    header{ animation: none; }
+  }
+
+  @media print{
+    body{ background: #fff; }
+    a{ color: inherit; text-decoration: none; }
+    section{ break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <p class="eyebrow">Proposed Workshop Outline · For Board Review</p>
+    <h1 class="title">Anyone Can Code</h1>
+    <p class="subtitle">From Idea to App with AI</p>
+    <hr class="accent-rule">
+
+    <dl class="facts">
+      <div class="fact">
+        <dt>Format</dt>
+        <dd>Online, instructor-led, hands-on</dd>
+      </div>
+      <div class="fact">
+        <dt>Duration</dt>
+        <dd>Approximately 3–4 hours</dd>
+      </div>
+      <div class="fact">
+        <dt>Audience</dt>
+        <dd>Community members of all experience levels — beginners, students, adults, and IT professionals</dd>
+      </div>
+      <div class="fact">
+        <dt>Prerequisites</dt>
+        <dd>No prior coding experience required</dd>
+      </div>
+    </dl>
+    <p style="margin-top:20px; font-size:14px; color:var(--ink-soft);"><strong>Recommended:</strong> participants join from a computer with access to the required AI coding tools.</p>
+  </header>
+
+  <section class="overview">
+    <h2 class="kicker">Workshop Overview</h2>
+    <p><strong>Anyone Can Code</strong> is an introductory, hands-on workshop designed to help community members understand modern Artificial Intelligence and experience how AI tools can assist with building software.</p>
+    <p>The workshop is intentionally designed for a broad audience. It does not assume prior programming knowledge and will focus on concepts, practical demonstrations, and guided hands-on learning rather than traditional programming syntax.</p>
+    <p>By the end of the workshop, participants will have a basic understanding of how modern AI works, how software applications are structured, and how to use an AI coding assistant to build and improve a simple application.</p>
+  </section>
+
+  <section>
+    <h2 class="section-title"><span class="num">01</span> Introduction: Anyone Can Code</h2>
+    <p>The workshop will begin by exploring how AI is changing the way software is created and lowering the barrier for people who have never programmed before.</p>
+    <p>A short live demonstration will show how an idea described in everyday language can be turned into a working application with the help of an AI coding assistant.</p>
+    <div class="purpose">
+      <span class="purpose-label">Purpose</span>
+      <p>Establish what is possible with modern AI and introduce the theme of the workshop.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title"><span class="num">02</span> Understanding AI and Large Language Models</h2>
+    <p>Participants will receive a beginner-friendly introduction to Artificial Intelligence and Large Language Models (LLMs). Topics will include:</p>
+    <ul class="plain">
+      <li>What Artificial Intelligence means</li>
+      <li>What an LLM is</li>
+      <li>A high-level explanation of how LLMs generate responses</li>
+      <li>The difference between an AI model and traditional software</li>
+    </ul>
+    <p>The explanation will remain conceptual and will not require mathematics or a computer science background.</p>
+    <div class="purpose">
+      <span class="purpose-label">Purpose</span>
+      <p>Give participants a practical mental model of the technology they will be using.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title"><span class="num">03</span> Tokens and Context</h2>
+    <p>Participants will learn two important concepts behind modern AI systems:</p>
+    <ul class="plain">
+      <li><strong>Tokens</strong> — how AI models process pieces of text and information.</li>
+      <li><strong>Context</strong> — the information available to an AI model when it generates a response.</li>
+    </ul>
+    <p>The session will demonstrate how providing better context and clearer information can significantly improve AI-generated results.</p>
+    <div class="purpose">
+      <span class="purpose-label">Purpose</span>
+      <p>Help participants understand why the quality of their instructions and information matters when working with AI.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title"><span class="num">04</span> Communicating Effectively with AI</h2>
+    <p>Participants will learn a simple framework for giving AI useful instructions. The focus will be on clearly communicating:</p>
+    <ul class="plain">
+      <li>The goal</li>
+      <li>Relevant context</li>
+      <li>Requirements</li>
+      <li>Constraints</li>
+    </ul>
+    <p>Participants will also learn that working with AI is usually an iterative process: describe what you want, review the result, test it, and continue improving it.</p>
+    <div class="purpose">
+      <span class="purpose-label">Purpose</span>
+      <p>Teach a practical skill that applies to both AI coding and general use of AI tools.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title"><span class="num">05</span> How Software Applications Work</h2>
+    <p>Before beginning the coding exercise, participants will receive a high-level introduction to the major components of a modern software application. The following terms will be explained in simple language:</p>
+    <ul class="plain">
+      <li><strong>Frontend</strong> — what the user sees and interacts with</li>
+      <li><strong>Backend</strong> — the logic and processing behind an application</li>
+      <li><strong>Database</strong> — where application data is stored</li>
+      <li><strong>API</strong> — how different software components communicate</li>
+      <li><strong>Server / Cloud</strong> — where applications and services can run</li>
+    </ul>
+    <p>No programming syntax will be required.</p>
+    <div class="purpose">
+      <span class="purpose-label">Purpose</span>
+      <p>Give beginners enough technical vocabulary to understand what an AI coding assistant is creating.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title"><span class="num">06</span> Coding with AI</h2>
+    <p>Participants will see how an AI coding assistant can translate natural-language requirements into software. The session will demonstrate a practical development cycle:</p>
+    <p class="mono" style="font-size:16px; font-weight:600; color:var(--accent);">Idea → Describe → Generate → Test → Improve</p>
+    <p>The instructor will also explain the role of the human in reviewing requirements, making decisions, testing results, and guiding the AI.</p>
+    <div class="purpose">
+      <span class="purpose-label">Purpose</span>
+      <p>Show that AI can assist with implementation while reinforcing the importance of human understanding and judgment.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title"><span class="num">07</span> Hands-On Project: Personal Expense Tracker</h2>
+    <p>Participants will build a simple <strong>Personal Expense Tracker</strong> with guidance from the instructor and an AI coding assistant. The application will begin with basic functionality such as:</p>
+    <ul class="plain">
+      <li>Entering an expense</li>
+      <li>Recording an amount and category</li>
+      <li>Displaying expenses</li>
+      <li>Calculating total spending</li>
+    </ul>
+    <p>As the exercise progresses, participants may add features such as filtering, persistent storage, charts, budgets, search, or other improvements.</p>
+    <p>The project is designed so that beginners can follow the guided version while more experienced participants can experiment with additional features.</p>
+    <div class="purpose">
+      <span class="purpose-label">Purpose</span>
+      <p>Give every participant practical experience turning an idea into a working application.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title"><span class="num">08</span> Testing, Debugging, and Improving with AI</h2>
+    <p>Participants will learn what to do when generated code does not work as expected. The session will demonstrate how to:</p>
+    <ul class="plain">
+      <li>Identify a problem</li>
+      <li>Provide an error or unexpected behavior to the AI</li>
+      <li>Ask the AI to explain the issue</li>
+      <li>Review a proposed solution</li>
+      <li>Test the fix</li>
+      <li>Continue improving the application</li>
+    </ul>
+    <div class="purpose">
+      <span class="purpose-label">Purpose</span>
+      <p>Demonstrate that building software is an iterative process and that errors are a normal part of development.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title"><span class="num">09</span> AI Limitations and Responsible Use</h2>
+    <p>The workshop will conclude the instructional portion with an important discussion about the limitations of AI.</p>
+    <p>Participants will learn that AI-generated information and code can be incorrect and should not automatically be trusted simply because it appears confident or professional.</p>
+
+    <div class="principle">
+      <p class="principle-line">Working <span class="ne">≠</span> Correct</p>
+      <p class="principle-line">Correct <span class="ne">≠</span> Secure</p>
+      <p class="principle-line">Secure <span class="ne">≠</span> Production-Ready</p>
+    </div>
+
+    <p>Additional care is necessary when software involves sensitive information, authentication, financial transactions, security, safety, or other high-impact use cases.</p>
+    <div class="purpose">
+      <span class="purpose-label">Purpose</span>
+      <p>Encourage responsible use of AI and appropriate human oversight.</p>
+    </div>
+  </section>
+
+  <section style="border-bottom: none;">
+    <h2 class="section-title"><span class="num">10</span> Independent Experimentation, Show &amp; Tell, and Q&amp;A</h2>
+    <p>Participants will have an opportunity to customize their application, experiment with their own ideas, and see what other attendees have created.</p>
+    <p>The workshop will conclude with a short online show-and-tell and open Q&amp;A.</p>
+    <div class="purpose">
+      <span class="purpose-label">Purpose</span>
+      <p>Encourage creativity, reinforce what participants learned, and give them confidence to continue experimenting after the workshop.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="big-title">Expected Outcomes</h2>
+    <p style="color:var(--ink-soft); margin-bottom: 20px;">By the end of the workshop, participants should have:</p>
+    <ul class="outcomes">
+      <li>A basic understanding of AI and Large Language Models</li>
+      <li>An understanding of tokens and context</li>
+      <li>A practical framework for communicating with AI</li>
+      <li>Familiarity with frontend, backend, databases, APIs, and cloud concepts</li>
+      <li>Hands-on experience using AI to build a simple application</li>
+      <li>Experience testing and improving AI-generated code</li>
+      <li>An understanding of important AI limitations</li>
+      <li>A foundation for continuing to learn and experiment independently</li>
+    </ul>
+  </section>
+
+  <section style="border-bottom: none;">
+    <h2 class="big-title">Proposed Workshop Flow</h2>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>Section</th>
+            <th class="time-col">Approx. Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Introduction &amp; Live Demonstration</td><td class="time-col">15 min</td></tr>
+          <tr><td>AI &amp; Large Language Models</td><td class="time-col">30 min</td></tr>
+          <tr><td>Tokens &amp; Context</td><td class="time-col">20 min</td></tr>
+          <tr><td>Communicating with AI</td><td class="time-col">20 min</td></tr>
+          <tr><td>Break</td><td class="time-col">15 min</td></tr>
+          <tr><td>How Software Applications Work</td><td class="time-col">20 min</td></tr>
+          <tr><td>Coding with AI</td><td class="time-col">15 min</td></tr>
+          <tr><td>Guided Hands-On Project</td><td class="time-col">55 min</td></tr>
+          <tr><td>Testing, Debugging &amp; AI Limitations</td><td class="time-col">20 min</td></tr>
+          <tr><td>Independent Experimentation</td><td class="time-col">15 min</td></tr>
+          <tr><td>Show &amp; Tell / Q&amp;A</td><td class="time-col">15 min</td></tr>
+          <tr class="total"><td>Total</td><td class="time-col">≈ 4 hours</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    <p class="mono">Prepared for board review · Anyone Can Code workshop proposal</p>
+  </footer>
+</div>
+
+</body>
+</html>
